@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+
+* {
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+	font-family: "Amatic SC", sans-serif;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: #3d405b;
+}
+
+.container {
+	width: 850px;
+	background-color: #f4f1de;
+	display: flex;
+	gap: 70px;
+	align-items: flex-end;
+	padding: 60px 40px;
+	border-radius: 10px;
+}
+
+.hangBox img {
+	max-width: 270px;
+}
+.hangBox h1 {
+	font-size: 2rem;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.queryDisplay {
+	display: flex;
+	gap: 10px;
+	list-style: none;
+	align-items: center;
+	justify-content: center;
+}
+
+.queryDisplay .letter {
+	width: 28px;
+	font-size: 4rem;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 40px;
+	border-bottom: 3px solid #3d405b;
+}
+
+.queryDisplay .guessed {
+	border-color: transparent;
+	margin: -35px 0 35px;
+}
+
+.gameBox h4 {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 500;
+	margin-bottom: 15px;
+}
+
+.gameBox .guesses b {
+	color: #e07a5f;
+	font-weight: 600;
+}
+
+.gameBox .guesses {
+	color: #12130f;
+}
+
+.gameBox .keyboard {
+	display: flex;
+	gap: 5px;
+	margin-top: 40px;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+:where(.gameEnd, .keyboard) button {
+	color: #e07a5f;
+	font-size: 1.2rem;
+	font-weight: 600;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background: #3d405b;
+	border-radius: 4px;
+}
+
+.keyboard button {
+	padding: 7px;
+	width: calc(100% / 9 - 5px);
+}
+
+.keyboard button[disabled] {
+	opacity: 0.7;
+	pointer-events: none;
+}
+
+:where(.gameEnd, .keyboard) button:hover {
+	background-color: #e07a5f;
+	color: #f4f1de;
+}
+
+.gameEnd {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	padding: 0 10px;
+	pointer-events: none;
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.5);
+	transition: opacity 0.4s ease;
+}
+
+.gameEnd.show {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.gameEnd .content {
+	background-color: #eae6e5;
+	max-width: 420px;
+	width: 100%;
+	text-align: center;
+	border-radius: 10px;
+	padding: 30px;
+}
+
+.gameEnd img {
+	max-width: 130px;
+}
+
+.gameEnd h4 {
+	font-size: 1.53rem;
+}
+
+.gameEnd p {
+	font-size: 1.5rem;
+	margin: 15px 0 30px 0;
+	font-weight: 500;
+}
+
+.gameEnd b {
+	color: #e07a5f;
+	font: 600;
+}
+
+.gameEnd button {
+	padding: 12px 23px;
+}
+
+@media (max-width: 782px) {
+	.container {
+		flex-direction: column;
+		padding: 30px 15px;
+		align-items: center;
+	}
+	.hangBox img {
+		max-width: 200px;
+	}
+	.hangBox h1 {
+		display: none;
+	}
+}
